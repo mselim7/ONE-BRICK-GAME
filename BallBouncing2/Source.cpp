@@ -69,7 +69,8 @@ void reset() {
 }
 void end() {
 	
-	
+	glLineWidth(3.0);
+
 	glColor3d(1.0, 0.0, 0.0);
 	glRasterPos2f(250, 80);
 	string s = "Game over Try Again";
@@ -133,6 +134,7 @@ void WON() {
 
 
 	
+	glLineWidth(3.0);
 	glBegin(GL_LINE_LOOP);
 	glColor3d(1, 0, 0);
 	glVertex2f(290, 205);
@@ -155,6 +157,7 @@ void WON() {
 	glEnd();
 	glColor3d(1.0, 0.0, 0.0);
 	glRasterPos2f(300, 225);
+	
 	string s1 = "New Game";
 	int len1 = s1.length();
 	for (int i = 0; i < len1; i++) {
@@ -351,7 +354,7 @@ void SetTransformations() {
 }
 void OnDisplay() {
 	MouseClicked = false;
-
+	
 	if (fb) {
 
 		glClearColor(0, 0, 0, 0);
