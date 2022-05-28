@@ -211,7 +211,7 @@ void menu() {
 	glColor3d(0, 1, 1);
 	glVertex2f(250, 300);
 	glEnd();
-	glColor3d(1.0, 0.0, 0.0);
+	glColor3d(1.0, 1.0, 1.0);
 	glRasterPos2f(300, 270);
 	
 	string s = "Start Game";
@@ -219,7 +219,7 @@ void menu() {
 	for (int i = 0; i < len; i++) {
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
 	}
-	glColor3d(1.0, 0.0, 0.0);
+	glColor3d(1.0, 1.0, 1.0);
 	glRasterPos2f(300, 170);
 	string s2 = "QuitGame";
 	int len2 = s2.length();
@@ -390,9 +390,10 @@ void OnDisplay() {
 			MouseClicked == true;
 		}
 
-		if (chances == 0) {
-			
+		if (chances == 0 || chances <= 0) {
+			chances = 0;
 			end();
+			
 		}
 		if (numofb == 0) {
 			
